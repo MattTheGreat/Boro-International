@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Form</title>
+    <meta name="description" content="">
+
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="images/favicon.jpg" rel="shortcut icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="js/Validate.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function(){
+          $("#merchandType").css("display","none");
+          $("#prodType").css("display","none");
+          $("#foodType").css("display","none");
+		      $("#exhibitor").css("display","none");
+
+        $("#isMerch").click(function(){
+	          $("#exhibitor").css("display","none");
+	          $("#isFood").attr('checked', false);
+	          $("#isProd").attr('checked', false);
+            $("#merchandType").slideDown("slow"); //Slide Down Effect
+          });
+
+        $("#isExbh").click(function(){
+	          $("#merchandType").css("display","none");
+		        $("#prodType").css("display","none");
+		        $("#foodType").css("display","none");
+            $("#exhibitor").slideDown("slow"); //Slide Down Effect
+        });
+
+        $("#isFood").click(function(){
+		      $("#prodType").css("display","none");
+          $("#foodType").slideDown("slow"); //Slide Down Effect
+        });
+
+		      $("#isProd").click(function(){
+		          $("#foodType").css("display","none");
+              $("#prodType").slideDown("slow"); //Slide Down Effect
+        });
+      });
+    </script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+    <header id="header">
+      <nav class="navbar navbar-inverse" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-flag"></i> 'Boro International</a> </div>
+          <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+            ``<li class="dropdown"><a class="dropdown-toggle" href="involved.html">Get Involved<span class="caret"></span></a>
+                <ul class="dropdown-content">
+                  <li><a href="vendor.html">Vendor</a></li>
+                  <li><a href="entertainer.html">Entertainer</a></li>
+                  <li><a href="volunteer.html">Volunteer</a></li>
+                </ul>
+              </li>
+              <li><a href="sponsors.html">Sponsors</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--/.container-->
+      </nav>
+      <!--/nav-->
+
+    </header>
+    <!--/header-->
+    <div id="inner-page">
+        <div class="top-center1">
+          <h2>VENDORS</h2>
+          <p class="lead">If you would like to be a vendor at the Boro International event please fill out the form below</p>
+          </div>
+          <div class="container">
+            <form method="POST" action="vendorSubmit.php" >
+            <div class="form-group has-success has-feedback">
+              <label class="control-label">*First Name</label>
+              <input type="text" class="form-control" id="veVendorFName" name="veVendorFName" required
+            </div>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label">*Last Name</label>
+              <input type="text" class="form-control" id="veVendorLName" name="veVendorLName" required>
+            </div>
+            <div class="form-group has-warning has-feedback">
+              <label class="control-label">*Email Address</label>
+              <input type="text" class="form-control" id="veEmailAdress" name="veEmailAddress" required>
+              <p id="veEmailAdress1"></p>
+            </div>
+            <div class="form-group has-error has-feedback">
+              <label class="control-label" for="phone">Phone Number</label>
+              <input type="tel" class="form-control" id="vePhoneNumber" name="vePhoneNumber">
+              <p id="vePhoneNumber1"></p>
+            </div>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label">Address</label>
+              <input type="text" class="form-control" id="veAddress" name="veAddress" required>
+            </div>
+
+            <div class="form-group has-error has-feedback">
+              <label class="control-label" for="phone">Nation Represented</label>
+              <input type="tel" class="form-control" id="veNation" name="veNation" required>
+            </div>
+            <div>
+                <ol class="formset">
+                    <li align="center">
+                    <h3>What type of Vendor are you?</h3><br>
+					          <input type="radio" name="rbVendorType" value="MERCHANDISER" id="isMerch" selected=false required> Merchandiser &nbsp;&nbsp;
+                    <input type="radio" name="rbVendorType" value="EXHIBITOR" id="isExbh" selected=false required> Exhibitor &nbsp;&nbsp;
+                  </li>
+                </ol>
+                <ol class="formset" id="merchandType">
+                <li><strong>MERCHANDISER INFORMATION</strong></li>
+                    <li align="center">
+                    <h3>What type of Merchandiser are you?</h3><br>
+					 <input type="radio" name="rbMerchType" value="Food" id="isFood"> Food Merchandiser&nbsp;&nbsp;
+                    <input type="radio" name="rbMerchType" value="Product" id="isProd"> Product Merchandiser&nbsp;&nbsp;
+                  </li>
+                </ol>
+                <ol class="formset" id="prodType">
+				 <p>Please select the type of merchandise you are selling. Please check all the boxes that apply</p>
+                  <input type="checkbox" name="veArt" value="ART"> ART<br>
+                  <input type="checkbox" name="veJewelry" value="JEWELRY"> Jewelry<br>
+                  <input type="checkbox" name="veClothing" value="CLOTHING"> Clothing<br>
+                  <p ><strong>Other (Please be Descriptive.)</strong></p><p><textarea name="veOther" id="veOther" style="width:96%;height:90px;background-color:white;color:black;border:solid 1px;padding:2%;">
+                  </textarea>
+                </p></ol>
+                <ol id="foodType" class="formset" >
+                    <p>Please provide information about the type of food you are selling.</p>
+                    <h3>FOOD DISCRIPTION:<br>(Please provide a brief discription of the food)</h3>
+                    <p><textarea name="veDisctiption" id="veDiscritpion" style="width:96%;height:90px;background-color:white;color:black;border:solid 1px;padding:2%;"></textarea>
+                </p></ol>
+
+                <ol id="exhibitor" class="formset">
+                <li><strong>EXHIBITOR INFORMATION</strong></li>
+                  <p>Please provide information about your exhibition</p>
+                  <p><textarea name="veExhibitInfo" id="veExhibitonInfo" style="width:96%;height:90px;background-color:white;color:black;border:solid 1px;padding:2%;"></textarea>
+                </p></ol>
+         </div>
+            <div>
+            <h2 style="color:red;" align="center">Rules and Regulations</h2>
+              <p>‘Boro International and Cannonsburgh Village
+                are not responsible for damage or theft during
+                the Celebration. ‘Boro International reserves the
+                right to accept or reject any item sold or displayed
+                during this event.
+                All vendors are responsible for their own tents,
+                tables and chairs. The booth size is 10’x10’.
+                ‘Boro International runs from 10:00 a.m. until
+                3:00 p.m.. Set-up may begin at 800 a.m. and
+                vendors MAY NOT DISMANTLE their booths
+                until 3:00 p.m.. Vehicles will not be allowed in
+                the Village between the hours of 9:30 a.m. and
+                3:00 p.m.
+                All vendors and exhibitors are responsible for
+                the clean-up of their booth space and surrounding
+                area throughout the day and especially upon
+                vacating the premises after the Celebration is
+                over. All grease must be disposed of off the
+                premises of Cannonsburgh Village.
+                ‘Boro International will supply advertisement for
+                this event. ‘Boro International reserves the right
+                to use your photos for publicity purposes and to
+                give your name to publications if they wish additional
+                information on you or your items for sale.
+                If you do not wish your name to be disclosed,
+                please note this request on your application.
+                ‘Boro International shall have the authority to
+                cancel all activities during the Celebration due
+                to severe weather or an act of God.
+                All vendors and exhibitors will be notified upon
+                approval for placement purposes inside or outside
+                the village.
+                If you have questions concerning the type of
+                craft, food or entertainment you can provide,
+                please contact Tena Bailey at
+                Tena.Bailey@cityschools.net . </p>
+                <input type="checkbox" name="veAgree" required> BY CLICKING this box you are agreeing that you have read and understand the term<br>
+              </div>
+              <div class="portfolio-filter text-center">
+                 <input class="btn btn-default" align="center" type="Submit" value="Submit" onclick="return vendorval()">
+              </div>
+            </form>
+          </div>
+        </div>
+    <!--/#portfolio-item-->
+    <section id="get-started">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+
+        </div>
+      </div>
+      <!--/.container-->
+    </div></section>
+    <!--/#get-started-->
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">Built by students from <a href="http://mtsu.edu/csc/">MTSU Computer Science.</a></div>
+          <div class="col-sm-6">
+            <ul id="menu-priamry-navigation-2" class="menu">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-38"><a href="index.html">Home</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-38"><a href="about.html">About</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-38"><a href="schedule.html">Schedule</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-38"><a href="involved.html">Get Involved</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-38"><a href="sponsors.html">Sponsors</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-38"><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--/#footer-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
